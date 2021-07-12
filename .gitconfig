@@ -1,0 +1,21 @@
+[user]
+	name = Brandon Tyre
+	email = brandon@botni.vision
+	signingkey = F5ADE0ED4DE7AD76
+[commit]
+    gpgsign = true
+[alias]
+    alias = config --get-regexp alias
+    lg = log --graph --date-order --abbrev-commit --decorate --format=format:'%C(bold white)%h%C(reset) - %C(bold blue)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n          %C(bold white)%an:%C(reset) %C(white)%s%C(reset)'
+    lga = !git lg --all
+    ls = ls-tree -r HEAD --name-only
+    s = !echo && git status && echo && git branch && echo
+    sa = !echo && git status && echo && git branch -a && echo
+    f = fetch -p
+    b = !git checkout -b $1 && git push -u origin
+    bd = !git branch -D $1 && git push origin --delete
+    d = diff --color-words
+    t = !git tag $1 && git push origin
+    td = !git tag -d $1 && git push origin --delete
+    tr = !git push origin HEAD:refs/tags/$1 && echo >/dev/null
+    trd = !git push origin :refs/tags/$1 && echo >/dev/null
